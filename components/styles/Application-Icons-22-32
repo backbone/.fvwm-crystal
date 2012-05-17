@@ -100,6 +100,7 @@ Style Source-Navigator*		MiniIcon 22x22/apps/snavigator.png, Icon 32x32/apps/sna
 Style lincity-ng		MiniIcon 22x22/apps/lincity-ng.png, Icon 32x32/apps/lincity-ng.png
 Style xlincity*		MiniIcon 22x22/apps/xlincity.png, Icon 32x32/apps/xlincity.png
 Style NeverNote		MiniIcon 22x22/apps/nevernote.sh.png, Icon 32x32/apps/nevernote.sh.png
+Style NixNote		MiniIcon 22x22/apps/nixnote.sh.png, Icon 32x32/apps/nixnote.sh.png
 Style *Minetest*		MiniIcon 22x22/apps/minetest.png, Icon 32x32/apps/minetest.png
 Style *minetest*		MiniIcon 22x22/apps/minetest.png, Icon 32x32/apps/minetest.png
 Style Android\ SDK\ Manager		MiniIcon 22x22/apps/android.png, Icon 32x32/apps/android.png
