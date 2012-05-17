@@ -1,4 +1,6 @@
 #!/bin/sh
 
-exec nvrun nexuiz $@
+which nvrun && exec nvrun nexuiz $@
+which optirun && exec optirun nexuiz $@
+exec nexuiz $@
 
