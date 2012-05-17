@@ -1,0 +1,17 @@
+Key Home A $[Mod1] -
+Key Home A $[Mod1]2 -
+Key Print A A -
+Key F11 A $[Mod1] -
+Key F11 A $[Mod1]2 -
+Key F12 A $[Mod1] -
+Key F12 A $[Mod1]2 -
+
+Key R A $[Mod1] Exec grun
+Key R A $[Mod1]2 Exec grun
+
+Key Print A A Exec shotroot.sh
+
+Key Pause A A Exec shotframe.sh
+
+Key Super_L A $[Mod1] Menu /Applications root c c
+Key Super_L A $[Mod1]2 Menu /Applications root c c

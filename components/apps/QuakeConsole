@@ -1,0 +1,57 @@
+# Variables
+SetEnv QuakeConsole_Border "1"
+
+CheckPreferences QuakeConsoleTerminal "SavePreferences QuakeConsoleTerminal 'FindCommand QuakeConsoleTerminal mrxvt urxvt aterm xterm'"
+LoadPreferences QuakeConsoleTerminal
+
+CheckPreferences QuakeConsoleHeight "SavePreferences QuakeConsoleHeight 'SetEnv QuakeConsole_Height 50'"
+LoadPreferences QuakeConsoleHeight
+
+CheckPreferences QuakeConsoleWidth "SavePreferences QuakeConsoleWidth 'SetEnv QuakeConsole_Width 96'"
+LoadPreferences QuakeConsoleWidth
+
+DestroyFunc QuakeConsole
+AddToFunc QuakeConsole
++ I None (QuakeConsoleNeedsUniqueName) QuakeConsole_Init
++ I All (QuakeConsoleNeedsUniqueName, CurrentDesk) QuakeConsole_Hide
++ I TestRc (0) QuakeConsole_Show
+
+DestroyFunc QuakeConsole_Init
+AddToFunc QuakeConsole_Init
++ I	Style QuakeConsoleNeedsUniqueName !Title, !Handles, SkipMapping, \
+	WindowListSkip, VariableSize, VariablePosition, NoIcon, StaysOnTop, \
+	!Iconifiable, EWMHMaximizeIgnoreWorkingArea, StickyAcrossPages, \
+	!Maximizable, BorderWidth $[QuakeConsole_Border], \
+	Colorset $[cs_quakeconsole], HilightColorset $[cs_quakeconsole], \
+	BorderColorset $[cs_quakeconsole], \
+	HilightBorderColorset $[cs_quakeconsole], WindowShadeSteps 8, \
+	WindowShadeShrinks
+
+# If you want to change QuakeConsole command, do it here!
++ I Exec exec $[QuakeConsoleTerminal] -name QuakeConsoleNeedsUniqueName -geometry +0+0
+# If you want to change QuakeConsole command, do it here!
+
++ I Wait QuakeConsoleNeedsUniqueName
++ I All (QuakeConsoleNeedsUniqueName) Piperead 'echo Move `expr $[vp.width] / 50 `p `expr $[vp.height] / 2`p'
++ I All (QuakeConsoleNeedsUniqueName) Resize $[QuakeConsole_Width] $[QuakeConsole_Height]
++ I Style QuakeConsoleNeedsUniqueName FixedPosition
++ I All (QuakeConsoleNeedsUniqueName) MoveToDesk 0 666 
++ I Style QuakeConsoleNeedsUniqueName !VariableSize, !Maximizable
++ I Prev (CurrentPage, AcceptsFocus, Visible) Focus
+
+DestroyFunc QuakeConsole_Show
+AddToFunc QuakeConsole_Show
++ I All (QuakeConsoleNeedsUniqueName) MoveToDesk 0 $[desk.n]
++ I All (QuakeConsoleNeedsUniqueName) Raise 
++ I All (QuakeConsoleNeedsUniqueName) Focus 
+ 
+DestroyFunc QuakeConsole_Hide
+AddToFunc QuakeConsole_Hide
++ I All (QuakeConsoleNeedsUniqueName) MoveToDesk 0 666 
++ I Window-FocusRemembered
+
+Mouse (QuakeConsoleNeedsUniqueName) 2 W $[Mod1] QuakeConsole-Resize
+
+# Dummy functions to avoid error messages
+AddToFunc Window-FocusRemembered I Nop
+AddToFunc Window-RememberFocused I Nop

@@ -1,0 +1,4 @@
+#!/bin/sh
+
+exec qv4l2 $@
+

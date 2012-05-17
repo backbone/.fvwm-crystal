@@ -1,0 +1,3 @@
++ I Exec fvwm-crystal.apps --database=~/.fvwm-crystal/Applications
++ I Exec fvwm-crystal.apps --search-icons-in=~/.fvwm-crystal/icons/ --default-dir-icon=22x22/directory.png
++ I Exec ~/.fvwm-crystal/startup.sh

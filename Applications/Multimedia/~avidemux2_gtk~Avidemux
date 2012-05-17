@@ -1,0 +1,4 @@
+#!/bin/sh
+
+exec avidemux2_gtk $@
+
