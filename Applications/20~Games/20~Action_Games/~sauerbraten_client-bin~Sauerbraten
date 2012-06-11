@@ -1,5 +1,5 @@
 #!/bin/sh
 
-which nvrun exec nvrun sauerbraten_client-bin $@
-which optirun exec optirun sauerbraten_client-bin $@
+which nvrun && exec nvrun sauerbraten_client-bin $@
+which optirun && exec optirun sauerbraten_client-bin $@
 exec sauerbraten_client-bin $@
