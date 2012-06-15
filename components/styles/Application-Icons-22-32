@@ -45,6 +45,7 @@ Style avidemux2_gtk		MiniIcon 22x22/apps/avidemux.png, Icon 32x32/apps/avidemux.
 Style Transmission		MiniIcon 22x22/apps/Transmission.png, Icon 32x32/apps/Transmission.png
 Style transmission-gtk		MiniIcon 22x22/apps/Transmission.png, Icon 32x32/apps/Transmission.png
 Style glade-3		MiniIcon 22x22/apps/glade-3.png, Icon 32x32/apps/glade-3.png
+Style gtk3-demo		MiniIcon 22x22/apps/glade-3.png, Icon 32x32/apps/glade-3.png
 Style lives		MiniIcon 22x22/apps/lives.png, Icon 32x32/apps/lives.png
 Style Audacity		MiniIcon 22x22/apps/audacity.png, Icon 32x32/apps/audacity.png
 Style recordMyDesktop		MiniIcon 22x22/apps/recordmydesktop.png, Icon 32x32/apps/recordmydesktop.png
